@@ -13,10 +13,13 @@
     padding: $padding-large-vertical $padding-base-horizontal;
   }
   h3 {
-    margin: 0 0 $margin-small-vertical 0;
+    margin: 2rem 0 $margin-small-vertical 0;
     text-align: left;
-    @media screen and (min-width: $screen-desktop) {
-      margin: 0 0 15px 0;
+    &:first-of-type{
+      margin: 0 0 $margin-small-vertical 0;
+      @media screen and (min-width: $screen-desktop) {
+        margin: 0 0 15px 0;
+      }
     }
   }
   label {
