@@ -424,7 +424,7 @@ $.fn.podlovewebplayer = function webPlayer(options) {
   });
 };
 
-pwp = { players: Player.players, VERSION: require('./constants').version };
+pwp = { players: Player.players, version: require('./constants').version };
 
 embed.init($, Player.players);
 

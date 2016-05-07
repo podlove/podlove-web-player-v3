@@ -19,6 +19,9 @@ var gulp = require('gulp')
   , karmaConf = require('./karma.conf.json')
   ;
 
+var replace = require('gulp-replace');
+var config = require('./package.json');
+
 // set paths
 var bower = 'bower_components/'
   , source = 'src/'
@@ -65,6 +68,7 @@ gulp.task('moderator', function() {
   return gulp.src(source + 'js/moderator.js')
     .pipe(browserify({ insertGlobals: true, debug: true }))
     .pipe(rename('podlove-web-moderator.js'))
+    .pipe(replace(/%version%/g, config.version))
     .pipe(gulp.dest(dest + 'js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
@@ -75,6 +79,7 @@ gulp.task('player', function() {
   return gulp.src(source + 'js/app.js')
     .pipe(browserify({ insertGlobals: true, debug: true }))
     .pipe(rename('podlove-web-player.js'))
+    .pipe(replace(/%version%/g, config.version))
     .pipe(gulp.dest(dest + 'js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
@@ -85,6 +90,7 @@ gulp.task('embed', function() {
   return gulp.src(source + 'js/embed-episode.js')
     .pipe(browserify({ insertGlobals: true, debug: true }))
     .pipe(rename('podlove-web-embed.js'))
+    .pipe(replace(/%version%/g, config.version))
     .pipe(gulp.dest(dest + 'js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())

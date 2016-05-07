@@ -1,4 +1,5 @@
 var moderate = require('./moderate');
+var constants = require('./constants');
 
 /**
  *
@@ -28,5 +29,6 @@ if (!window.jQuery) {
 }
 
 window.pwp = {
-  players: moderate.players
+  players: moderate.players,
+  version: constants.version
 };

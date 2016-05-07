@@ -1,9 +1,15 @@
 'use strict';
 
 var moderate = require('./moderate');
+var constants = require('./constants');
 
 // receive messages from embedded players
 window.addEventListener('message', moderate.handleMessage, false);
+
+window.pwp = {
+  players: moderate.players,
+  version: constants.version
+};
 
 /**
  * Replace selection of nodes with embedded podlove webplayers and register them internally
@@ -20,7 +26,3 @@ function replaceWithJQ(opts) {
 if (window.jQuery) {
    jQuery.fn.podlovewebplayer = replaceWithJQ;
 }
-
-window.pwp = {
-  players: moderate.players
-};
