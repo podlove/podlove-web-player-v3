@@ -5,6 +5,7 @@
 !.eslintrc
 !.editorconfig
 !.travis.yml
+!.travis
 
 # external dependencies
 node_modules
